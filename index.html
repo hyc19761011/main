@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>大恆行銷後台管理系統</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f4f5f7;
+        --surface: #ffffff;
+        --ink: #1c2430;
+        --ink-soft: #4a5568;
+        --ink-faint: #8a94a6;
+        --line: #dde1e8;
+        --banner-bg: #1f2733;
+        --banner-ink: #f2f4f7;
+        --banner-sub: #a9b4c4;
+        --btn-bg: #1f2733;
+        --btn-ink: #ffffff;
+        --btn-bg-hover: #333f52;
+        --qr-frame: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14181f;
+          --surface: #1e242e;
+          --ink: #eef1f5;
+          --ink-soft: #b6bfcc;
+          --ink-faint: #7d8798;
+          --line: #333c49;
+          --banner-bg: #0d1117;
+          --banner-ink: #f2f4f7;
+          --banner-sub: #93a1b4;
+          --btn-bg: #e8ecf1;
+          --btn-ink: #161c25;
+          --btn-bg-hover: #ffffff;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC",
+          -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ---------- 頁首橫幅 ---------- */
+      .banner {
+        background: var(--banner-bg);
+        color: var(--banner-ink);
+        padding: 34px 20px 30px;
+      }
+      .banner-inner {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .banner h1 {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        line-height: 1.3;
+      }
+      .banner p {
+        margin: 6px 0 0;
+        font-size: 14px;
+        color: var(--banner-sub);
+        letter-spacing: 0.12em;
+      }
+
+      /* ---------- 主內容 ---------- */
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 28px 20px 8px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 640px) {
+        .grid { grid-template-columns: 1fr; }
+        .banner h1 { font-size: 25px; }
+        .banner { padding: 26px 18px 22px; }
+        main { padding: 20px 16px 4px; }
+      }
+
+      /* ---------- 工具卡片 ---------- */
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 22px 22px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .card h2 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .card .desc {
+        margin: 8px 0 0;
+        font-size: 14.5px;
+        color: var(--ink-soft);
+        line-height: 1.65;
+      }
+      .card .url {
+        margin: 12px 0 0;
+        font-size: 12.5px;
+        color: var(--ink-faint);
+        word-break: break-all;
+      }
+      .card .qr-row {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .qr-box {
+        background: var(--qr-frame);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 8px;
+        line-height: 0;
+        flex: 0 0 auto;
+        width: 148px;
+        height: 148px;
+      }
+      .qr-box img, .qr-box canvas { display: block; }
+      .qr-hint {
+        font-size: 13px;
+        color: var(--ink-soft);
+        line-height: 1.6;
+      }
+      .open-btn {
+        margin-top: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--btn-bg);
+        color: var(--btn-ink);
+        text-decoration: none;
+        font-size: 15.5px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        padding: 12px 20px;
+        border-radius: 8px;
+        transition: background 0.15s ease;
+      }
+      .open-btn:hover, .open-btn:focus-visible { background: var(--btn-bg-hover); }
+      .open-btn:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 2px; }
+      .open-btn .arrow { font-size: 15px; }
+
+      /* ---------- 頁尾 ---------- */
+      footer {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 26px 20px 40px;
+        text-align: center;
+        font-size: 13px;
+        color: var(--ink-faint);
+        letter-spacing: 0.08em;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="banner">
+      <div class="banner-inner">
+        <h1>大恆行銷後台管理系統</h1>
+        <p>內部工具統一入口</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="grid" id="toolGrid"></div>
+    </main>
+
+    <footer>更多工具陸續加入</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+      // ============================================================
+      // 工具清單：日後新增工具，只要在這裡加一筆即可，
+      // 卡片與 QR code 會自動產生。
+      // ============================================================
+      var TOOLS = [
+        {
+          name: "每週工作日誌表",
+          desc: "每週填寫工作進度，支援多人填寫、自動帶入上週資料",
+          url: "https://hyc19761011.github.io/-weekly-log/"
+        },
+        {
+          name: "守善大悅貴賓資料表",
+          desc: "客戶資料建檔、查詢、來客分析報表",
+          url: "https://hyc19761011.github.io/-vip-form/"
+        }
+      ];
+
+      (function renderTools() {
+        var grid = document.getElementById("toolGrid");
+        TOOLS.forEach(function (tool, i) {
+          var card = document.createElement("section");
+          card.className = "card";
+
+          var title = document.createElement("h2");
+          title.textContent = tool.name;
+
+          var desc = document.createElement("p");
+          desc.className = "desc";
+          desc.textContent = tool.desc;
+
+          var urlLine = document.createElement("p");
+          urlLine.className = "url";
+          urlLine.textContent = tool.url;
+
+          var btn = document.createElement("a");
+          btn.className = "open-btn";
+          btn.href = tool.url;
+          btn.target = "_blank";
+          btn.rel = "noopener noreferrer";
+          btn.innerHTML = "開啟工具 <span class=\"arrow\" aria-hidden=\"true\">→</span>";
+
+          var qrRow = document.createElement("div");
+          qrRow.className = "qr-row";
+
+          var qrBox = document.createElement("div");
+          qrBox.className = "qr-box";
+          qrBox.id = "qr-" + i;
+
+          var hint = document.createElement("div");
+          hint.className = "qr-hint";
+          hint.textContent = "用手機掃描 QR code，也能開啟同一個工具。";
+
+          qrRow.appendChild(qrBox);
+          qrRow.appendChild(hint);
+
+          card.appendChild(title);
+          card.appendChild(desc);
+          card.appendChild(urlLine);
+          card.appendChild(btn);
+          card.appendChild(qrRow);
+          grid.appendChild(card);
+        });
+
+        // QR code 在前端即時產生（qrcodejs）
+        if (window.QRCode) {
+          TOOLS.forEach(function (tool, i) {
+            new QRCode(document.getElementById("qr-" + i), {
+              text: tool.url,
+              width: 132,
+              height: 132,
+              colorDark: "#000000",
+              colorLight: "#ffffff",
+              correctLevel: QRCode.CorrectLevel.M
+            });
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
