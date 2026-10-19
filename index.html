@@ -176,6 +176,277 @@
         color: var(--ink-faint);
         letter-spacing: 0.08em;
       }
+
+      [hidden] { display: none !important; }
+
+      /* ---------- 登入 ---------- */
+      .login-wrap {
+        max-width: 424px;
+        margin: 0 auto;
+        padding: 40px 20px 56px;
+      }
+      .login-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 28px 26px 24px;
+      }
+      .login-card h2 {
+        margin: 0;
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .login-card .sub {
+        margin: 6px 0 0;
+        font-size: 13.5px;
+        color: var(--ink-soft);
+      }
+      .field { margin-top: 18px; }
+      .field label {
+        display: block;
+        font-size: 13.5px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .field input {
+        width: 100%;
+        padding: 11px 12px;
+        font-size: 16px;
+        font-family: inherit;
+        color: var(--ink);
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      .field input:focus-visible {
+        outline: 2px solid var(--ink-faint);
+        outline-offset: 1px;
+      }
+      .login-error {
+        margin: 14px 0 0;
+        font-size: 14px;
+        color: #b3261e;
+        line-height: 1.55;
+      }
+      @media (prefers-color-scheme: dark) {
+        .login-error { color: #f2b8b5; }
+      }
+      .login-btn {
+        margin-top: 22px;
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--btn-bg);
+        color: var(--btn-ink);
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 15.5px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        padding: 12px 20px;
+        border-radius: 8px;
+        transition: background 0.15s ease;
+      }
+      .login-btn:hover:not(:disabled),
+      .login-btn:focus-visible { background: var(--btn-bg-hover); }
+      .login-btn:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 2px; }
+      .login-btn:disabled { opacity: 0.55; cursor: default; }
+
+      /* ---------- 使用者列 ---------- */
+      .userbar {
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+      }
+      .userbar-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .userbar .welcome { font-size: 14.5px; }
+      .logout-btn {
+        flex: 0 0 auto;
+        background: transparent;
+        border: 1px solid var(--line);
+        color: var(--ink-soft);
+        border-radius: 8px;
+        padding: 6px 16px;
+        font-size: 13.5px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
+      .logout-btn:hover, .logout-btn:focus-visible {
+        color: var(--ink);
+        border-color: var(--ink-faint);
+      }
+      .logout-btn:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 2px; }
+      @media (max-width: 640px) {
+        .login-wrap { padding: 26px 16px 44px; }
+        .userbar-inner { padding: 10px 16px; }
+      }
+
+      /* ---------- 使用者列按鈕 ---------- */
+      .userbar-actions { display: flex; gap: 8px; flex: 0 0 auto; flex-wrap: wrap; }
+      .pwd-btn {
+        background: transparent;
+        border: 1px solid var(--line);
+        color: var(--ink-soft);
+        border-radius: 8px;
+        padding: 6px 16px;
+        font-size: 13.5px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
+      .pwd-btn:hover, .pwd-btn:focus-visible {
+        color: var(--ink);
+        border-color: var(--ink-faint);
+      }
+      .pwd-btn:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 2px; }
+
+      /* ---------- 員工管理 ---------- */
+      .admin {
+        margin-top: 28px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 22px;
+      }
+      .admin-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .admin-head h2 { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.4; }
+      .primary-btn {
+        background: var(--btn-bg);
+        color: var(--btn-ink);
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14.5px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        padding: 9px 18px;
+        border-radius: 8px;
+        transition: background 0.15s ease;
+      }
+      .primary-btn:hover:not(:disabled),
+      .primary-btn:focus-visible { background: var(--btn-bg-hover); }
+      .primary-btn:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 2px; }
+      .primary-btn:disabled { opacity: 0.55; cursor: default; }
+      .admin-msg { margin: 14px 0 0; font-size: 14px; line-height: 1.55; }
+      .admin-msg.err { color: #b3261e; }
+      .admin-msg.ok { color: #1e7d32; }
+      @media (prefers-color-scheme: dark) {
+        .admin-msg.err { color: #f2b8b5; }
+        .admin-msg.ok { color: #a5d6a7; }
+      }
+      .emp-list { margin-top: 6px; }
+      .emp-note { padding: 16px 0 4px; font-size: 14.5px; color: var(--ink-faint); }
+      .emp-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px 16px;
+        flex-wrap: wrap;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+      }
+      .emp-row:first-child { border-top: none; padding-top: 10px; }
+      .emp-info { min-width: 0; }
+      .emp-name { font-size: 16px; font-weight: 700; }
+      .emp-name .emp-title {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--ink-soft);
+        margin-left: 8px;
+      }
+      .emp-meta { margin-top: 2px; font-size: 13.5px; color: var(--ink-soft); }
+      .badge {
+        display: inline-block;
+        padding: 0 8px;
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        font-size: 12px;
+        line-height: 1.7;
+        vertical-align: 1px;
+      }
+      .badge.on { color: #1e7d32; }
+      .badge.off { color: #b3261e; }
+      @media (prefers-color-scheme: dark) {
+        .badge.on { color: #a5d6a7; }
+        .badge.off { color: #f2b8b5; }
+      }
+      .emp-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+      .row-btn {
+        background: transparent;
+        border: 1px solid var(--line);
+        color: var(--ink-soft);
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 13.5px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
+      .row-btn:hover:not(:disabled),
+      .row-btn:focus-visible { color: var(--ink); border-color: var(--ink-faint); }
+      .row-btn:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 2px; }
+      .row-btn:disabled { opacity: 0.45; cursor: default; }
+
+      /* ---------- 彈出表單 ---------- */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        background: rgba(10, 14, 20, 0.52);
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 48px 16px 32px;
+        overflow-y: auto;
+      }
+      .modal-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 24px 24px 20px;
+        width: 100%;
+        max-width: 420px;
+      }
+      .modal-card h3 { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.4; }
+      .modal-card .sub { margin: 5px 0 0; font-size: 13.5px; color: var(--ink-soft); }
+      .field select {
+        width: 100%;
+        padding: 11px 12px;
+        font-size: 16px;
+        font-family: inherit;
+        color: var(--ink);
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      .field select:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 1px; }
+      .form-ok { margin: 14px 0 0; font-size: 14px; color: #1e7d32; line-height: 1.55; }
+      @media (prefers-color-scheme: dark) {
+        .form-ok { color: #a5d6a7; }
+      }
+      .modal-actions { margin-top: 22px; display: flex; gap: 10px; justify-content: flex-end; }
+      .modal-actions .row-btn { padding: 9px 16px; font-size: 14.5px; }
+      @media (max-width: 640px) {
+        .admin { padding: 18px 16px; }
+        .modal-backdrop { padding-top: 24px; }
+      }
     </style>
   </head>
   <body>
@@ -186,11 +457,132 @@
       </div>
     </header>
 
-    <main>
-      <div class="grid" id="toolGrid"></div>
-    </main>
+    <div class="userbar" id="userBar" hidden>
+      <div class="userbar-inner">
+        <span class="welcome" id="welcomeText"></span>
+        <div class="userbar-actions">
+          <button type="button" class="pwd-btn" id="changePwdBtn">修改密碼</button>
+          <button type="button" class="logout-btn" id="logoutBtn">登出</button>
+        </div>
+      </div>
+    </div>
 
-    <footer>更多工具陸續加入</footer>
+    <section class="login-wrap" id="loginView" hidden>
+      <form class="login-card" id="loginForm">
+        <h2>大恆行銷後台管理系統</h2>
+        <p class="sub">請使用員工帳號登入後繼續</p>
+        <div class="field">
+          <label for="accountInput">帳號</label>
+          <input id="accountInput" name="account" type="text" placeholder="請輸入姓名" autocomplete="username" required />
+        </div>
+        <div class="field">
+          <label for="passwordInput">密碼</label>
+          <input id="passwordInput" name="password" type="password" placeholder="請輸入密碼" autocomplete="current-password" required />
+        </div>
+        <p class="login-error" id="loginError" role="alert" hidden></p>
+        <button type="submit" class="login-btn" id="loginBtn">登入</button>
+      </form>
+    </section>
+
+    <div id="portalView" hidden>
+      <main>
+        <div class="grid" id="toolGrid"></div>
+
+        <section class="admin" id="adminSection" hidden>
+          <div class="admin-head">
+            <h2>員工管理</h2>
+            <button type="button" class="primary-btn" id="addEmpBtn">新增員工</button>
+          </div>
+          <p class="admin-msg" id="adminMsg" role="status" hidden></p>
+          <div class="emp-list" id="empList"></div>
+        </section>
+      </main>
+
+      <footer>更多工具陸續加入</footer>
+    </div>
+
+    <!-- 修改密碼（所有登入者） -->
+    <div class="modal-backdrop" id="pwdModal" hidden>
+      <form class="modal-card" id="pwdForm">
+        <h3>修改密碼</h3>
+        <p class="sub">修改完成後，下次登入請使用新密碼。</p>
+        <div class="field">
+          <label for="oldPwdInput">目前密碼</label>
+          <input id="oldPwdInput" type="password" autocomplete="current-password" required />
+        </div>
+        <div class="field">
+          <label for="newPwdInput">新密碼</label>
+          <input id="newPwdInput" type="password" autocomplete="new-password" required />
+        </div>
+        <div class="field">
+          <label for="newPwd2Input">再次輸入新密碼</label>
+          <input id="newPwd2Input" type="password" autocomplete="new-password" required />
+        </div>
+        <p class="login-error" id="pwdError" role="alert" hidden></p>
+        <p class="form-ok" id="pwdOk" hidden>密碼已修改成功。</p>
+        <div class="modal-actions">
+          <button type="button" class="row-btn" data-close="pwdModal">取消</button>
+          <button type="submit" class="primary-btn" id="pwdSubmitBtn">確認修改</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- 管理員重設員工密碼 -->
+    <div class="modal-backdrop" id="resetModal" hidden>
+      <form class="modal-card" id="resetForm">
+        <h3>重設密碼</h3>
+        <p class="sub" id="resetTargetText"></p>
+        <div class="field">
+          <label for="resetPwdInput">新密碼</label>
+          <input id="resetPwdInput" type="password" autocomplete="new-password" required />
+        </div>
+        <div class="field">
+          <label for="resetPwd2Input">再次輸入新密碼</label>
+          <input id="resetPwd2Input" type="password" autocomplete="new-password" required />
+        </div>
+        <p class="login-error" id="resetError" role="alert" hidden></p>
+        <p class="form-ok" id="resetOk" hidden>密碼已重設。</p>
+        <div class="modal-actions">
+          <button type="button" class="row-btn" data-close="resetModal">取消</button>
+          <button type="submit" class="primary-btn" id="resetSubmitBtn">確認重設</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- 管理員新增員工 -->
+    <div class="modal-backdrop" id="addModal" hidden>
+      <form class="modal-card" id="addForm">
+        <h3>新增員工</h3>
+        <div class="field">
+          <label for="addNameInput">姓名</label>
+          <input id="addNameInput" type="text" autocomplete="off" required />
+        </div>
+        <div class="field">
+          <label for="addAccountInput">帳號</label>
+          <input id="addAccountInput" type="text" autocomplete="off" required />
+        </div>
+        <div class="field">
+          <label for="addTitleInput">職稱</label>
+          <input id="addTitleInput" type="text" autocomplete="off" required />
+        </div>
+        <div class="field">
+          <label for="addPwdInput">初始密碼</label>
+          <input id="addPwdInput" type="password" autocomplete="new-password" required />
+        </div>
+        <div class="field">
+          <label for="addRoleSelect">角色</label>
+          <select id="addRoleSelect">
+            <option value="一般" selected>一般</option>
+            <option value="管理員">管理員</option>
+          </select>
+        </div>
+        <p class="login-error" id="addError" role="alert" hidden></p>
+        <div class="modal-actions">
+          <button type="button" class="row-btn" data-close="addModal">取消</button>
+          <button type="submit" class="primary-btn" id="addSubmitBtn">新增</button>
+        </div>
+      </form>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
@@ -271,6 +663,574 @@
           });
         }
       })();
+    </script>
+    <script>
+      // ============================================================
+      // 員工登入閘門
+      // - 帳號密碼送到 Apps Script 後端驗證（JSONP 跨網域呼叫）
+      // - 密碼先在前端以 SHA-256 雜湊，不傳明文
+      // - 登入狀態存 localStorage，效期 7 天
+      // ============================================================
+      var LOGIN_API = "https://script.google.com/macros/s/AKfycbxFbqe5lWY0DDNLix_VTLlaWqp7qevtn6XWKhE9Qet7-OWfjcJOmEOTehN1I_sDnsdGyw/exec";
+      var SESSION_KEY = "daheng_admin_session";
+      var SESSION_TTL = 7 * 24 * 60 * 60 * 1000; // 7 天
+
+      var loginView = document.getElementById("loginView");
+      var portalView = document.getElementById("portalView");
+      var userBar = document.getElementById("userBar");
+      var welcomeText = document.getElementById("welcomeText");
+      var loginForm = document.getElementById("loginForm");
+      var accountInput = document.getElementById("accountInput");
+      var passwordInput = document.getElementById("passwordInput");
+      var loginBtn = document.getElementById("loginBtn");
+      var loginError = document.getElementById("loginError");
+      var logoutBtn = document.getElementById("logoutBtn");
+      var changePwdBtn = document.getElementById("changePwdBtn");
+      var adminSection = document.getElementById("adminSection");
+      var empList = document.getElementById("empList");
+      var adminMsg = document.getElementById("adminMsg");
+      var addEmpBtn = document.getElementById("addEmpBtn");
+      var currentSession = null;
+
+      function showLogin() {
+        currentSession = null;
+        portalView.hidden = true;
+        userBar.hidden = true;
+        adminSection.hidden = true;
+        loginView.hidden = false;
+      }
+
+      function showPortal(session) {
+        loginView.hidden = true;
+        welcomeText.textContent = "歡迎，" + session.name + "（" + session.title + "）";
+        userBar.hidden = false;
+        portalView.hidden = false;
+        currentSession = session;
+        if (session.role === "管理員") {
+          adminSection.hidden = false;
+          loadEmployees();
+        } else {
+          adminSection.hidden = true;
+        }
+      }
+
+      function loadSession() {
+        try {
+          var raw = localStorage.getItem(SESSION_KEY);
+          if (!raw) return null;
+          var s = JSON.parse(raw);
+          if (!s || !s.name || !s.loginAt) return null;
+          if (Date.now() - s.loginAt > SESSION_TTL) {
+            localStorage.removeItem(SESSION_KEY);
+            return null;
+          }
+          return s;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function saveSession(s) {
+        try { localStorage.setItem(SESSION_KEY, JSON.stringify(s)); } catch (e) {}
+      }
+
+      function clearSession() {
+        try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+      }
+
+      // SHA-256 雜湊（crypto.subtle，需 HTTPS 環境）
+      function sha256Hex(text) {
+        if (!window.crypto || !crypto.subtle) {
+          return Promise.reject(new Error("insecure"));
+        }
+        var buf = new TextEncoder().encode(text);
+        return crypto.subtle.digest("SHA-256", buf).then(function (hash) {
+          return Array.prototype.map.call(new Uint8Array(hash), function (b) {
+            return ("0" + b.toString(16)).slice(-2);
+          }).join("");
+        });
+      }
+
+      // JSONP 呼叫後端：?action=...&payload=...&callback=...
+      function jsonpCall(params) {
+        return new Promise(function (resolve, reject) {
+          var cbName = "dahengCb" + Date.now() + Math.floor(Math.random() * 1e6);
+          var script = document.createElement("script");
+          var timer = setTimeout(function () {
+            cleanup();
+            reject(new Error("timeout"));
+          }, 20000);
+          function cleanup() {
+            clearTimeout(timer);
+            try { delete window[cbName]; } catch (e) { window[cbName] = undefined; }
+            if (script.parentNode) script.parentNode.removeChild(script);
+          }
+          window[cbName] = function (data) {
+            cleanup();
+            resolve(data);
+          };
+          script.onerror = function () {
+            cleanup();
+            reject(new Error("network"));
+          };
+          var qs = Object.keys(params).map(function (k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(params[k]);
+          }).join("&");
+          script.src = LOGIN_API + "?" + qs + "&callback=" + encodeURIComponent(cbName);
+          document.head.appendChild(script);
+        });
+      }
+
+      function setLoginError(msg) {
+        if (msg) {
+          loginError.textContent = msg;
+          loginError.hidden = false;
+        } else {
+          loginError.textContent = "";
+          loginError.hidden = true;
+        }
+      }
+
+      loginForm.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var account = accountInput.value.trim();
+        var password = passwordInput.value;
+        setLoginError("");
+        if (!account || !password) {
+          setLoginError("請輸入帳號與密碼");
+          return;
+        }
+        loginBtn.disabled = true;
+        loginBtn.textContent = "登入中…";
+        sha256Hex(password).then(function (hash) {
+          var payload = {};
+          payload["帳號"] = account;
+          payload["密碼雜湊"] = hash;
+          return jsonpCall({
+            action: "login",
+            payload: JSON.stringify(payload)
+          });
+        }).then(function (res) {
+          loginBtn.disabled = false;
+          loginBtn.textContent = "登入";
+          if (res && res.ok) {
+            var session = {
+              name: res["姓名"] || account,
+              title: res["職稱"] || "",
+              role: res["角色"] || "",
+              loginAt: Date.now()
+            };
+            saveSession(session);
+            passwordInput.value = "";
+            showPortal(session);
+          } else {
+            setLoginError((res && res.msg) ? res.msg : "登入失敗，請再試一次");
+          }
+        }).catch(function (err) {
+          loginBtn.disabled = false;
+          loginBtn.textContent = "登入";
+          if (err && err.message === "insecure") {
+            setLoginError("目前連線環境無法安全登入，請使用 HTTPS 網址開啟本頁");
+          } else {
+            setLoginError("連線失敗，請檢查網路後再試一次");
+          }
+        });
+      });
+
+      logoutBtn.addEventListener("click", function () {
+        clearSession();
+        passwordInput.value = "";
+        setLoginError("");
+        showLogin();
+      });
+
+      // 進站判斷：有未過期 session 直接進後台，否則顯示登入畫面
+      var existingSession = loadSession();
+      if (existingSession) {
+        showPortal(existingSession);
+      } else {
+        showLogin();
+      }
+
+      // ============================================================
+      // 修改密碼 / 員工管理（後端 API v2，沿用 JSONP + SHA-256）
+      // ============================================================
+      var pwdModal = document.getElementById("pwdModal");
+      var pwdForm = document.getElementById("pwdForm");
+      var oldPwdInput = document.getElementById("oldPwdInput");
+      var newPwdInput = document.getElementById("newPwdInput");
+      var newPwd2Input = document.getElementById("newPwd2Input");
+      var pwdError = document.getElementById("pwdError");
+      var pwdOk = document.getElementById("pwdOk");
+      var pwdSubmitBtn = document.getElementById("pwdSubmitBtn");
+
+      var resetModal = document.getElementById("resetModal");
+      var resetForm = document.getElementById("resetForm");
+      var resetTargetText = document.getElementById("resetTargetText");
+      var resetPwdInput = document.getElementById("resetPwdInput");
+      var resetPwd2Input = document.getElementById("resetPwd2Input");
+      var resetError = document.getElementById("resetError");
+      var resetOk = document.getElementById("resetOk");
+      var resetSubmitBtn = document.getElementById("resetSubmitBtn");
+      var resetTarget = null;
+
+      var addModal = document.getElementById("addModal");
+      var addForm = document.getElementById("addForm");
+      var addNameInput = document.getElementById("addNameInput");
+      var addAccountInput = document.getElementById("addAccountInput");
+      var addTitleInput = document.getElementById("addTitleInput");
+      var addPwdInput = document.getElementById("addPwdInput");
+      var addRoleSelect = document.getElementById("addRoleSelect");
+      var addError = document.getElementById("addError");
+      var addSubmitBtn = document.getElementById("addSubmitBtn");
+
+      function openModal(modal) { modal.hidden = false; }
+      function closeModal(modal) { modal.hidden = true; }
+
+      // 取消按鈕與點背景關閉
+      [pwdModal, resetModal, addModal].forEach(function (modal) {
+        modal.addEventListener("click", function (ev) {
+          if (ev.target === modal) closeModal(modal);
+        });
+      });
+      Array.prototype.forEach.call(document.querySelectorAll("[data-close]"), function (btn) {
+        btn.addEventListener("click", function () {
+          closeModal(document.getElementById(btn.getAttribute("data-close")));
+        });
+      });
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "Escape") {
+          closeModal(pwdModal);
+          closeModal(resetModal);
+          closeModal(addModal);
+        }
+      });
+
+      function setFormError(el, msg) {
+        if (msg) {
+          el.textContent = msg;
+          el.hidden = false;
+        } else {
+          el.textContent = "";
+          el.hidden = true;
+        }
+      }
+
+      function setAdminMsg(msg, isOk) {
+        if (!msg) {
+          adminMsg.textContent = "";
+          adminMsg.hidden = true;
+          adminMsg.className = "admin-msg";
+          return;
+        }
+        adminMsg.textContent = msg;
+        adminMsg.className = "admin-msg " + (isOk ? "ok" : "err");
+        adminMsg.hidden = false;
+      }
+
+      function networkFailMsg(err) {
+        if (err && err.message === "insecure") {
+          return "目前連線環境無法安全處理密碼，請使用 HTTPS 網址開啟本頁";
+        }
+        return "連線失敗，請檢查網路後再試一次";
+      }
+
+      // ---------- 修改自己的密碼 ----------
+      changePwdBtn.addEventListener("click", function () {
+        pwdForm.reset();
+        setFormError(pwdError, "");
+        pwdOk.hidden = true;
+        openModal(pwdModal);
+        oldPwdInput.focus();
+      });
+
+      pwdForm.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (!currentSession) return;
+        setFormError(pwdError, "");
+        pwdOk.hidden = true;
+        if (newPwdInput.value !== newPwd2Input.value) {
+          setFormError(pwdError, "兩次輸入的新密碼不一致");
+          return;
+        }
+        pwdSubmitBtn.disabled = true;
+        pwdSubmitBtn.textContent = "處理中…";
+        Promise.all([sha256Hex(oldPwdInput.value), sha256Hex(newPwdInput.value)])
+          .then(function (hashes) {
+            var payload = {};
+            payload["帳號"] = currentSession.name;
+            payload["舊密碼雜湊"] = hashes[0];
+            payload["新密碼雜湊"] = hashes[1];
+            return jsonpCall({ action: "change_password", payload: JSON.stringify(payload) });
+          })
+          .then(function (res) {
+            pwdSubmitBtn.disabled = false;
+            pwdSubmitBtn.textContent = "確認修改";
+            if (res && res.ok) {
+              pwdOk.hidden = false;
+              setTimeout(function () { closeModal(pwdModal); }, 1200);
+            } else {
+              setFormError(pwdError, (res && res.msg) ? res.msg : "修改失敗，請再試一次");
+            }
+          })
+          .catch(function (err) {
+            pwdSubmitBtn.disabled = false;
+            pwdSubmitBtn.textContent = "確認修改";
+            setFormError(pwdError, networkFailMsg(err));
+          });
+      });
+
+      // ---------- 員工管理（僅管理員） ----------
+      function empEnabled(v) {
+        return v === true || v === 1 || v === "啟用" || v === "是" ||
+          v === "TRUE" || v === "true";
+      }
+
+      function loadEmployees() {
+        if (!currentSession) return;
+        setAdminMsg("", false);
+        empList.innerHTML = "";
+        var note = document.createElement("p");
+        note.className = "emp-note";
+        note.textContent = "載入中…";
+        empList.appendChild(note);
+        var payload = {};
+        payload["管理員帳號"] = currentSession.name;
+        jsonpCall({ action: "admin_list", payload: JSON.stringify(payload) })
+          .then(function (res) {
+            if (!res || !res.ok) {
+              empList.innerHTML = "";
+              setAdminMsg((res && res.msg) ? res.msg : "無法載入員工列表", false);
+              return;
+            }
+            var list = res["員工"] || res["員工列表"] || res.employees ||
+              res.list || res.data || [];
+            renderEmployees(list);
+          })
+          .catch(function () {
+            empList.innerHTML = "";
+            setAdminMsg("連線失敗，請檢查網路後再試一次", false);
+          });
+      }
+
+      function renderEmployees(list) {
+        empList.innerHTML = "";
+        if (!list.length) {
+          var note = document.createElement("p");
+          note.className = "emp-note";
+          note.textContent = "目前沒有員工資料。";
+          empList.appendChild(note);
+          return;
+        }
+        list.forEach(function (emp) {
+          var account = emp["帳號"] || "";
+          var name = emp["姓名"] || account;
+          var title = emp["職稱"] || "";
+          var role = emp["角色"] || "一般";
+          var enabled = empEnabled(emp["啟用"]);
+          var isSelf = currentSession && account === currentSession.name;
+
+          var row = document.createElement("div");
+          row.className = "emp-row";
+
+          var info = document.createElement("div");
+          info.className = "emp-info";
+          var nameLine = document.createElement("div");
+          nameLine.className = "emp-name";
+          nameLine.textContent = name;
+          var titleSpan = document.createElement("span");
+          titleSpan.className = "emp-title";
+          titleSpan.textContent = title;
+          nameLine.appendChild(titleSpan);
+          var meta = document.createElement("div");
+          meta.className = "emp-meta";
+          meta.textContent = "帳號：" + account + "・角色：" + role + "・";
+          var badge = document.createElement("span");
+          badge.className = "badge " + (enabled ? "on" : "off");
+          badge.textContent = enabled ? "啟用中" : "已停用";
+          meta.appendChild(badge);
+          info.appendChild(nameLine);
+          info.appendChild(meta);
+
+          var actions = document.createElement("div");
+          actions.className = "emp-actions";
+
+          var resetBtn = document.createElement("button");
+          resetBtn.type = "button";
+          resetBtn.className = "row-btn";
+          resetBtn.textContent = "重設密碼";
+          resetBtn.addEventListener("click", function () {
+            openResetModal(emp);
+          });
+
+          var toggleBtn = document.createElement("button");
+          toggleBtn.type = "button";
+          toggleBtn.className = "row-btn";
+          toggleBtn.textContent = enabled ? "停用" : "啟用";
+          if (isSelf) {
+            toggleBtn.disabled = true;
+            toggleBtn.title = "不能停用自己的帳號";
+          }
+          toggleBtn.addEventListener("click", function () {
+            var changes = {};
+            changes["啟用"] = !enabled;
+            adminUpdate(emp, changes, toggleBtn,
+              "已" + (enabled ? "停用" : "啟用") + "「" + name + "」的帳號");
+          });
+
+          var roleBtn = document.createElement("button");
+          roleBtn.type = "button";
+          roleBtn.className = "row-btn";
+          roleBtn.textContent = role === "管理員" ? "設為一般" : "設為管理員";
+          if (isSelf) {
+            roleBtn.disabled = true;
+            roleBtn.title = "不能變更自己的角色";
+          }
+          roleBtn.addEventListener("click", function () {
+            var changes = {};
+            changes["角色"] = role === "管理員" ? "一般" : "管理員";
+            adminUpdate(emp, changes, roleBtn,
+              "已將「" + name + "」設為" + changes["角色"]);
+          });
+
+          actions.appendChild(resetBtn);
+          actions.appendChild(toggleBtn);
+          actions.appendChild(roleBtn);
+
+          row.appendChild(info);
+          row.appendChild(actions);
+          empList.appendChild(row);
+        });
+      }
+
+      function adminUpdate(emp, changes, btn, okMsg) {
+        if (!currentSession) return;
+        var payload = {};
+        payload["管理員帳號"] = currentSession.name;
+        payload["帳號"] = emp["帳號"];
+        Object.keys(changes).forEach(function (k) { payload[k] = changes[k]; });
+        btn.disabled = true;
+        jsonpCall({ action: "admin_update", payload: JSON.stringify(payload) })
+          .then(function (res) {
+            if (res && res.ok) {
+              setAdminMsg(okMsg, true);
+              loadEmployees();
+            } else {
+              btn.disabled = false;
+              setAdminMsg((res && res.msg) ? res.msg : "操作失敗，請再試一次", false);
+            }
+          })
+          .catch(function () {
+            btn.disabled = false;
+            setAdminMsg("連線失敗，請檢查網路後再試一次", false);
+          });
+      }
+
+      // ---------- 管理員重設密碼 ----------
+      function openResetModal(emp) {
+        resetTarget = emp;
+        resetForm.reset();
+        setFormError(resetError, "");
+        resetOk.hidden = true;
+        resetTargetText.textContent = "為「" + (emp["姓名"] || emp["帳號"]) +
+          "」（帳號：" + emp["帳號"] + "）設定新密碼。";
+        openModal(resetModal);
+        resetPwdInput.focus();
+      }
+
+      resetForm.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (!currentSession || !resetTarget) return;
+        setFormError(resetError, "");
+        resetOk.hidden = true;
+        if (resetPwdInput.value !== resetPwd2Input.value) {
+          setFormError(resetError, "兩次輸入的新密碼不一致");
+          return;
+        }
+        var targetName = resetTarget["姓名"] || resetTarget["帳號"];
+        resetSubmitBtn.disabled = true;
+        resetSubmitBtn.textContent = "處理中…";
+        sha256Hex(resetPwdInput.value)
+          .then(function (hash) {
+            var payload = {};
+            payload["管理員帳號"] = currentSession.name;
+            payload["帳號"] = resetTarget["帳號"];
+            payload["新密碼雜湊"] = hash;
+            return jsonpCall({ action: "admin_reset_password", payload: JSON.stringify(payload) });
+          })
+          .then(function (res) {
+            resetSubmitBtn.disabled = false;
+            resetSubmitBtn.textContent = "確認重設";
+            if (res && res.ok) {
+              resetOk.hidden = false;
+              setAdminMsg("已重設「" + targetName + "」的密碼", true);
+              setTimeout(function () { closeModal(resetModal); }, 1200);
+            } else {
+              setFormError(resetError, (res && res.msg) ? res.msg : "重設失敗，請再試一次");
+            }
+          })
+          .catch(function (err) {
+            resetSubmitBtn.disabled = false;
+            resetSubmitBtn.textContent = "確認重設";
+            setFormError(resetError, networkFailMsg(err));
+          });
+      });
+
+      // ---------- 管理員新增員工 ----------
+      addEmpBtn.addEventListener("click", function () {
+        addForm.reset();
+        addAccountInput.removeAttribute("data-touched");
+        setFormError(addError, "");
+        openModal(addModal);
+        addNameInput.focus();
+      });
+
+      // 帳號預設帶入姓名（手動改過帳號後不再覆蓋）
+      addNameInput.addEventListener("input", function () {
+        if (!addAccountInput.getAttribute("data-touched")) {
+          addAccountInput.value = addNameInput.value;
+        }
+      });
+      addAccountInput.addEventListener("input", function () {
+        addAccountInput.setAttribute("data-touched", "1");
+      });
+
+      addForm.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (!currentSession) return;
+        setFormError(addError, "");
+        var name = addNameInput.value.trim();
+        addSubmitBtn.disabled = true;
+        addSubmitBtn.textContent = "處理中…";
+        sha256Hex(addPwdInput.value)
+          .then(function (hash) {
+            var payload = {};
+            payload["管理員帳號"] = currentSession.name;
+            payload["帳號"] = addAccountInput.value.trim();
+            payload["密碼雜湊"] = hash;
+            payload["姓名"] = name;
+            payload["職稱"] = addTitleInput.value.trim();
+            payload["角色"] = addRoleSelect.value;
+            payload["啟用"] = true;
+            return jsonpCall({ action: "admin_add", payload: JSON.stringify(payload) });
+          })
+          .then(function (res) {
+            addSubmitBtn.disabled = false;
+            addSubmitBtn.textContent = "新增";
+            if (res && res.ok) {
+              closeModal(addModal);
+              setAdminMsg("已新增員工「" + name + "」", true);
+              loadEmployees();
+            } else {
+              setFormError(addError, (res && res.msg) ? res.msg : "新增失敗，請再試一次");
+            }
+          })
+          .catch(function (err) {
+            addSubmitBtn.disabled = false;
+            addSubmitBtn.textContent = "新增";
+            setFormError(addError, networkFailMsg(err));
+          });
+      });
     </script>
   </body>
 </html>
